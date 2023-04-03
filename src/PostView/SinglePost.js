@@ -33,7 +33,7 @@ function SinglePost(props) {
         <Link to='/formPage'><img src={more} alt="Bootstrap" /></Link>
       </nav>
 
-      <img src={picture} alt="image" />
+      <img src={picture}/>
       <div className="navbar bg-body-tertiary my-container">
         <div >
         <img src={heart} alt="Bootstrap" />

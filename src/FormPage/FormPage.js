@@ -45,7 +45,7 @@ function FormPage() {
       body: formDataObj,
     });
 
-    const data = await response.json();
+    await response.json();
     navigate("/posts");
   };
 
