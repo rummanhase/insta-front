@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState , useEffect} from "react";
 import "./PostView.css"
 import {Link} from 'react-router-dom'
 import heart from '../image/heart.png'
@@ -8,6 +8,20 @@ import more from '../image/more_icon.svg'
 
 function SinglePost(props) {
   const { post } = props;
+
+  let image = post.image
+  console.log(`${process.env.REACT_APP_BASE_URL}/${image}`);
+  const [picture , myPicture] = useState('')
+  async function fetchPosts() {
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/${image}`);
+    const json = await response.json();
+    myPicture(json.result);
+  }
+
+  useEffect(()=>{
+    fetchPosts()
+  } , [])
+
   const date = new Date().toDateString()
   return (
     <div >
@@ -19,7 +33,7 @@ function SinglePost(props) {
         <Link to='/formPage'><img src={more} alt="Bootstrap" /></Link>
       </nav>
 
-      <img src={post.image} alt="image" />
+      <img src={picture} alt="image" />
       <div className="navbar bg-body-tertiary my-container">
         <div >
         <img src={heart} alt="Bootstrap" />
@@ -33,3 +47,4 @@ function SinglePost(props) {
 }
 
 export default SinglePost;
+

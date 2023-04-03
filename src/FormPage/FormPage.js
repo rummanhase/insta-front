@@ -40,7 +40,7 @@ function FormPage() {
     formDataObj.append("description", formData.description);
     formDataObj.append("image", formData.image);
 
-    const response = await fetch("/post", {
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/post`, {
       method: "post",
       body: formDataObj,
     });

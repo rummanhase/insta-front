@@ -4,6 +4,7 @@ import './PostView.css'
 import SinglePost from "./SinglePost";
 
 
+
 function PostView() {
   const [posts , setPosts] = useState([])
   
@@ -12,7 +13,7 @@ function PostView() {
   } , [])
 
   async function fetchPosts() {
-    const response = await fetch('/posts');
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/posts`);
     const json = await response.json();
     setPosts(json.result);
   }
