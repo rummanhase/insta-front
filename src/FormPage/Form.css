@@ -1,0 +1,22 @@
+.my-form{
+    max-width: 600px;
+    margin: 5% auto;
+    background-color: whitesmoke;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+.my-input-wrapper{
+    display: flex;
+    justify-content:space-between;
+}
+.description-inp-box{
+    width: 100%;
+}
+.my-btn-box{
+    text-align: center;
+    margin-top: 2rem;
+}
+.btn{
+    background-color: rgb(182 186 191);
+    color: grey;
+}
