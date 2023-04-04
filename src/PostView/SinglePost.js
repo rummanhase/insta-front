@@ -10,6 +10,7 @@ function SinglePost(props) {
   const { post } = props;
 
   let image = post.image
+  console.log(post.image);
   console.log(`this is my image url ${process.env.REACT_APP_BASE_URL}/${image}`);
   const [picture , myPicture] = useState('')
   async function fetchPosts() {
