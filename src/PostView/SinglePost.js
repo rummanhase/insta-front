@@ -10,7 +10,7 @@ function SinglePost(props) {
   const { post } = props;
 
   let image = post.image
-  console.log(`${process.env.REACT_APP_BASE_URL}/${image}`);
+  console.log(`this is my image url ${process.env.REACT_APP_BASE_URL}/${image}`);
   const [picture , myPicture] = useState('')
   async function fetchPosts() {
     const response = await fetch(`${process.env.REACT_APP_BASE_URL}/${image}`);
@@ -33,7 +33,7 @@ function SinglePost(props) {
         <Link to='/formPage'><img src={more} alt="Bootstrap" /></Link>
       </nav>
 
-      <img src={picture}/>
+      <img src={picture} alt=""/>
       <div className="navbar bg-body-tertiary my-container">
         <div >
         <img src={heart} alt="Bootstrap" />
